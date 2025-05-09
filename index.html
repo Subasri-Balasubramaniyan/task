@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="head">
+        <h1>TO DO LIST</h1>
+        <italic>Start where you are. Use what you have. Do what you can</italic>
+    </div>
+    <div class="head-2">
+    Enter Your task here 👉 <input id="inputbox" type="text"><br><br>
+    <button id="btn">Add</button>
+</div>
+    <ul id="container">
+    </ul>
+    <script>
+       var inputbox=document.getElementById("inputbox")
+       var btn=document.getElementById("btn")
+       var container=document.getElementById("container")
+       
+       btn.addEventListener("click",function(){
+        var li=document.createElement("li")
+        li.innerHTML=inputbox.value + "<button onclick="+"deleteItem(event)"+">Remove</button>"
+        container.append(li)
+        alert("Your task was added 👍🥳")
+       })
+       
+       function deleteItem(event){
+       event.target.parentElement.remove()
+       alert("Your task was removed 😞😞")
+       }
+    </script> 
+</body>
+</html>
+
+
